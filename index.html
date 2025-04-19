@@ -1,12 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>My Portfolio</title>
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	<link id="favicon" rel="shortcut icon" type="image/x-icon" href="favicon.png">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noah Siler – Portfolio</title>
+
+  <style>
+    /* Reset */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+      overflow-x: hidden; /* Prevent horizontal scroll */
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+      background: #000;
+      color: #fff;
+    }
+
+    /* Make the SVG fill the entire width so no side borders appear */
+    #portfolio-svg {
+      width: 100vw;  /* viewport‑width */
+      height: auto;
+      display: block;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.875rem;
+      opacity: 0.6;
+      background: #000; /* ensure footer blends with page background */
+    }
+  </style>
 </head>
 <body>
-	<img id="img" src="portfolio.png">
+  <!-- Use <object> so the SVG stays vector‑sharp while filling width -->
+  <object id="portfolio-svg"
+          data="Portfolio.svg"
+          type="image/svg+xml"
+          aria-label="Noah Siler Portfolio">
+    <!-- Fallback for browsers without inline‑SVG support -->
+    <img src="Portfolio.svg" alt="Noah Siler Portfolio"/>
+  </object>
+
+  <footer>
+    &copy; 2025 Noah Siler. All rights reserved.
+  </footer>
 </body>
 </html>
